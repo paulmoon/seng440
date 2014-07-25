@@ -55,7 +55,7 @@ Ltmp4:
 LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
 	movl	-28(%rbp), %eax
 	cmpl	-40(%rbp), %eax
-	jge	LBB0_9
+	jge	LBB0_7
 ## BB#2:                                ##   in Loop: Header=BB0_1 Depth=1
 	movslq	-28(%rbp), %rax
 	movsbl	-1056(%rbp,%rax), %ecx
@@ -70,35 +70,19 @@ LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
 	addl	$1, %edx
 	movl	%edx, -36(%rbp)
 	movl	$0, -32(%rbp)
-	jmp	LBB0_7
+	jmp	LBB0_5
 LBB0_4:                                 ##   in Loop: Header=BB0_1 Depth=1
 	movl	-32(%rbp), %eax
 	addl	$1, %eax
 	movl	%eax, -32(%rbp)
-	movl	-32(%rbp), %eax
-	movl	-44(%rbp), %ecx
-	subl	$1, %ecx
-	cmpl	%ecx, %eax
-	jne	LBB0_6
-## BB#5:                                ##   in Loop: Header=BB0_1 Depth=1
-	movslq	-32(%rbp), %rax
-	movb	-1168(%rbp,%rax), %cl
-	movslq	-36(%rbp), %rax
-	movb	%cl, -2176(%rbp,%rax)
-	movl	-36(%rbp), %edx
-	addl	$1, %edx
-	movl	%edx, -36(%rbp)
-	movl	$0, -32(%rbp)
+LBB0_5:                                 ##   in Loop: Header=BB0_1 Depth=1
+	jmp	LBB0_6
 LBB0_6:                                 ##   in Loop: Header=BB0_1 Depth=1
-	jmp	LBB0_7
-LBB0_7:                                 ##   in Loop: Header=BB0_1 Depth=1
-	jmp	LBB0_8
-LBB0_8:                                 ##   in Loop: Header=BB0_1 Depth=1
 	movl	-28(%rbp), %eax
 	addl	$1, %eax
 	movl	%eax, -28(%rbp)
 	jmp	LBB0_1
-LBB0_9:
+LBB0_7:
 	leaq	L_.str3(%rip), %rdi
 	leaq	-2176(%rbp), %rsi
 	movb	$0, %al
@@ -107,13 +91,13 @@ LBB0_9:
 	movq	(%rsi), %rsi
 	cmpq	-8(%rbp), %rsi
 	movl	%eax, -2216(%rbp)       ## 4-byte Spill
-	jne	LBB0_11
-## BB#10:                               ## %SP_return
+	jne	LBB0_9
+## BB#8:                                ## %SP_return
 	movl	$0, %eax
 	addq	$2224, %rsp             ## imm = 0x8B0
 	popq	%rbp
 	ret
-LBB0_11:                                ## %CallStackCheckFailBlk
+LBB0_9:                                 ## %CallStackCheckFailBlk
 	callq	___stack_chk_fail
 	.cfi_endproc
 

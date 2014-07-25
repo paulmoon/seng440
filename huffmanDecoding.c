@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
-//
-// This function takes a huffman code and a list of characters that are ordered 
-// from most frequent to least frequent in the original string. It uses this 
-// information to decrypt the code and return the original string of characters.
-//
-// Note that it assumes 0 is related to the most frequent then 10 to the 2nd most 
-// frequent and 110 to the third etc.
-//
+/*
+This function takes a huffman code and a list of characters that are ordered 
+from most frequent to least frequent in the original string. It uses this 
+information to decrypt the code and return the original string of characters.
+
+Note that it assumes 0 is related to the most frequent then 10 to the 2nd most 
+frequent and 110 to the third etc.
+*/
 
 int main(void){
-	//Open config file
-	FILE *file = fopen("config.txt", "r");
+	//Open input file
+	FILE *file = fopen("input.txt", "r");
 
 	//Counting Variables
 	int i;
@@ -26,7 +26,7 @@ int main(void){
 	//Code, variable and output strings
 	char code[1000];
 	char variables[100];
-	char finalString[1000] = "";
+	char output[1000];
 
 	//Acquiring input from file
 	fgets(variables, sizeof variables, file);
@@ -46,7 +46,7 @@ int main(void){
 		if(code[i] == '0'){
 			//Add the value that has frequency rating equal to the number of 1's before the 0 
 			//(less 1's = higher frequency)
-			finalString[numOutcomes] = variables[variableFrequency];
+			output[numOutcomes] = variables[variableFrequency];
 			numOutcomes = numOutcomes + 1;
 			variableFrequency = 0;
 		//If it's a one we add to the frequency rating counter
@@ -54,7 +54,7 @@ int main(void){
 			variableFrequency = variableFrequency + 1;
 			//If frequency rating = maximum then we dont need to wait for a zero
 			if(variableFrequency == numVariables-1){
-				finalString[numOutcomes] = variables[variableFrequency];
+				output[numOutcomes] = variables[variableFrequency];
 				numOutcomes = numOutcomes + 1;
 				variableFrequency = 0;
 			}
@@ -62,7 +62,6 @@ int main(void){
 	}
 
 	//Output the string
-	printf("%s", finalString);
-
+	printf("%s\n", output);
 	return 0;
 }
