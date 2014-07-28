@@ -1,134 +1,162 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
-	.align	4, 0x90
-_main:                                  ## @main
-	.cfi_startproc
-## BB#0:
-	pushq	%rbp
-Ltmp2:
-	.cfi_def_cfa_offset 16
-Ltmp3:
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-Ltmp4:
-	.cfi_def_cfa_register %rbp
-	subq	$2224, %rsp             ## imm = 0x8B0
-	leaq	L_.str(%rip), %rdi
-	leaq	L_.str1(%rip), %rsi
-	movq	___stack_chk_guard@GOTPCREL(%rip), %rax
-	movq	(%rax), %rax
-	movq	%rax, -8(%rbp)
-	movl	$0, -12(%rbp)
-	callq	_fopen
-	movl	$100, %esi
-	leaq	-1168(%rbp), %rdi
-	movq	%rax, -24(%rbp)
-	movl	$0, -32(%rbp)
-	movl	$0, -36(%rbp)
-	movq	-24(%rbp), %rdx
-	callq	_fgets
-	movl	$1000, %esi             ## imm = 0x3E8
-	leaq	-1056(%rbp), %rdi
-	movq	-24(%rbp), %rdx
-	movq	%rax, -2184(%rbp)       ## 8-byte Spill
-	callq	_fgets
-	leaq	L_.str2(%rip), %rsi
-	leaq	-1168(%rbp), %rdi
-	movq	%rax, -2192(%rbp)       ## 8-byte Spill
-	callq	_strtok
-	leaq	-1168(%rbp), %rdi
-	leaq	-1056(%rbp), %rdx
-	movq	%rdi, -2200(%rbp)       ## 8-byte Spill
-	movq	%rdx, %rdi
-	movq	%rax, -2208(%rbp)       ## 8-byte Spill
-	callq	_strlen
-	movl	%eax, %ecx
-	movl	%ecx, -40(%rbp)
-	movq	-2200(%rbp), %rdi       ## 8-byte Reload
-	callq	_strlen
-	movl	%eax, %ecx
-	movl	%ecx, -44(%rbp)
-	movq	-24(%rbp), %rdi
-	callq	_fclose
-	movl	$0, -28(%rbp)
-	movl	%eax, -2212(%rbp)       ## 4-byte Spill
-LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
-	movl	-28(%rbp), %eax
-	cmpl	-40(%rbp), %eax
-	jge	LBB0_9
-## BB#2:                                ##   in Loop: Header=BB0_1 Depth=1
-	movslq	-28(%rbp), %rax
-	movsbl	-1056(%rbp,%rax), %ecx
-	cmpl	$48, %ecx
-	jne	LBB0_4
-## BB#3:                                ##   in Loop: Header=BB0_1 Depth=1
-	movslq	-32(%rbp), %rax
-	movb	-1168(%rbp,%rax), %cl
-	movslq	-36(%rbp), %rax
-	movb	%cl, -2176(%rbp,%rax)
-	movl	-36(%rbp), %edx
-	addl	$1, %edx
-	movl	%edx, -36(%rbp)
-	movl	$0, -32(%rbp)
-	jmp	LBB0_7
-LBB0_4:                                 ##   in Loop: Header=BB0_1 Depth=1
-	movl	-32(%rbp), %eax
-	addl	$1, %eax
-	movl	%eax, -32(%rbp)
-	movl	-32(%rbp), %eax
-	movl	-44(%rbp), %ecx
-	subl	$1, %ecx
-	cmpl	%ecx, %eax
-	jne	LBB0_6
-## BB#5:                                ##   in Loop: Header=BB0_1 Depth=1
-	movslq	-32(%rbp), %rax
-	movb	-1168(%rbp,%rax), %cl
-	movslq	-36(%rbp), %rax
-	movb	%cl, -2176(%rbp,%rax)
-	movl	-36(%rbp), %edx
-	addl	$1, %edx
-	movl	%edx, -36(%rbp)
-	movl	$0, -32(%rbp)
-LBB0_6:                                 ##   in Loop: Header=BB0_1 Depth=1
-	jmp	LBB0_7
-LBB0_7:                                 ##   in Loop: Header=BB0_1 Depth=1
-	jmp	LBB0_8
-LBB0_8:                                 ##   in Loop: Header=BB0_1 Depth=1
-	movl	-28(%rbp), %eax
-	addl	$1, %eax
-	movl	%eax, -28(%rbp)
-	jmp	LBB0_1
-LBB0_9:
-	leaq	L_.str3(%rip), %rdi
-	leaq	-2176(%rbp), %rsi
-	movb	$0, %al
-	callq	_printf
-	movq	___stack_chk_guard@GOTPCREL(%rip), %rsi
-	movq	(%rsi), %rsi
-	cmpq	-8(%rbp), %rsi
-	movl	%eax, -2216(%rbp)       ## 4-byte Spill
-	jne	LBB0_11
-## BB#10:                               ## %SP_return
-	movl	$0, %eax
-	addq	$2224, %rsp             ## imm = 0x8B0
-	popq	%rbp
-	ret
-LBB0_11:                                ## %CallStackCheckFailBlk
-	callq	___stack_chk_fail
-	.cfi_endproc
-
-	.section	__TEXT,__cstring,cstring_literals
-L_.str:                                 ## @.str
-	.asciz	"input.txt"
-
-L_.str1:                                ## @.str1
-	.asciz	"r"
-
-L_.str2:                                ## @.str2
-	.asciz	"\n"
-
-L_.str3:                                ## @.str3
-	.asciz	"%s\n"
-
-
-.subsections_via_symbols
+	.arch armv5
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 2
+	.eabi_attribute 30, 6
+	.eabi_attribute 18, 4
+	.file	"huffmanDecoding.c"
+	.section	.rodata
+	.align	2
+.LC0:
+	.ascii	"input.txt\000"
+	.align	2
+.LC1:
+	.ascii	"r\000"
+	.align	2
+.LC2:
+	.ascii	"\012\000"
+	.text
+	.align	2
+	.global	main
+	.type	main, %function
+main:
+	@ args = 0, pretend = 0, frame = 2128
+	@ frame_needed = 1, uses_anonymous_args = 0
+	stmfd	sp!, {fp, lr}
+	add	fp, sp, #4
+	sub	sp, sp, #2128
+	ldr	r0, .L7
+	ldr	r1, .L7+4
+	bl	fopen
+	mov	r3, r0
+	str	r3, [fp, #-28]
+	mov	r3, #0
+	str	r3, [fp, #-20]
+	mov	r3, #0
+	str	r3, [fp, #-16]
+	sub	r3, fp, #1120
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	mov	r1, #100
+	ldr	r2, [fp, #-28]
+	bl	fgets
+	sub	r3, fp, #1024
+	sub	r3, r3, #4
+	mov	r0, r3
+	mov	r1, #1000
+	ldr	r2, [fp, #-28]
+	bl	fgets
+	sub	r3, fp, #1120
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	ldr	r1, .L7+8
+	bl	strtok
+	sub	r3, fp, #1024
+	sub	r3, r3, #4
+	mov	r0, r3
+	bl	strlen
+	mov	r3, r0
+	str	r3, [fp, #-12]
+	sub	r3, fp, #1120
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	bl	strlen
+	mov	r3, r0
+	str	r3, [fp, #-8]
+	ldr	r0, [fp, #-28]
+	bl	fclose
+	mov	r3, #0
+	str	r3, [fp, #-24]
+	b	.L2
+.L5:
+	ldr	r3, [fp, #-24]
+	ldr	r2, .L7+12
+	sub	r1, fp, #4
+	add	r3, r1, r3
+	add	r3, r3, r2
+	ldrb	r3, [r3, #0]	@ zero_extendqisi2
+	cmp	r3, #48
+	bne	.L3
+	ldr	r0, [fp, #-16]
+	ldr	r3, [fp, #-20]
+	ldr	r2, .L7+16
+	sub	ip, fp, #4
+	add	r3, ip, r3
+	add	r3, r3, r2
+	ldrb	r1, [r3, #0]	@ zero_extendqisi2
+	ldr	r2, .L7+20
+	sub	ip, fp, #4
+	add	r3, ip, r0
+	add	r2, r3, r2
+	mov	r3, r1
+	strb	r3, [r2, #0]
+	ldr	r3, [fp, #-16]
+	add	r3, r3, #1
+	str	r3, [fp, #-16]
+	mov	r3, #0
+	str	r3, [fp, #-20]
+	b	.L4
+.L3:
+	ldr	r3, [fp, #-20]
+	add	r3, r3, #1
+	str	r3, [fp, #-20]
+	ldr	r3, [fp, #-8]
+	sub	r2, r3, #1
+	ldr	r3, [fp, #-20]
+	cmp	r2, r3
+	bne	.L4
+	ldr	r0, [fp, #-16]
+	ldr	r3, [fp, #-20]
+	ldr	r2, .L7+16
+	sub	r1, fp, #4
+	add	r3, r1, r3
+	add	r3, r3, r2
+	ldrb	r1, [r3, #0]	@ zero_extendqisi2
+	ldr	r2, .L7+20
+	sub	ip, fp, #4
+	add	r3, ip, r0
+	add	r2, r3, r2
+	mov	r3, r1
+	strb	r3, [r2, #0]
+	ldr	r3, [fp, #-16]
+	add	r3, r3, #1
+	str	r3, [fp, #-16]
+	mov	r3, #0
+	str	r3, [fp, #-20]
+.L4:
+	ldr	r3, [fp, #-24]
+	add	r3, r3, #1
+	str	r3, [fp, #-24]
+.L2:
+	ldr	r2, [fp, #-24]
+	ldr	r3, [fp, #-12]
+	cmp	r2, r3
+	blt	.L5
+	sub	r3, fp, #2112
+	sub	r3, r3, #4
+	sub	r3, r3, #12
+	mov	r0, r3
+	bl	puts
+	mov	r3, #0
+	mov	r0, r3
+	sub	sp, fp, #4
+	ldmfd	sp!, {fp, pc}
+.L8:
+	.align	2
+.L7:
+	.word	.LC0
+	.word	.LC1
+	.word	.LC2
+	.word	-1024
+	.word	-1124
+	.word	-2124
+	.size	main, .-main
+	.ident	"GCC: (Sourcery G++ Lite 2008q3-72) 4.3.2"
+	.section	.note.GNU-stack,"",%progbits

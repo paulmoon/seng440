@@ -1,306 +1,445 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.globl	_main
-	.align	4, 0x90
-_main:                                  ## @main
-	.cfi_startproc
-## BB#0:
-	pushq	%rbp
-Ltmp2:
-	.cfi_def_cfa_offset 16
-Ltmp3:
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-Ltmp4:
-	.cfi_def_cfa_register %rbp
-	subq	$3056, %rsp             ## imm = 0xBF0
-	leaq	L_.str(%rip), %rdi
-	leaq	L_.str1(%rip), %rsi
-	movq	___stack_chk_guard@GOTPCREL(%rip), %rax
-	movq	(%rax), %rax
-	movq	%rax, -8(%rbp)
-	movl	$0, -12(%rbp)
-	callq	_fopen
-	movl	$100, %esi
-	leaq	-1152(%rbp), %rdi
-	movl	$0, %ecx
-	movabsq	$100, %rdx
-	leaq	-2272(%rbp), %r8
-	movq	%rax, -24(%rbp)
-	movl	$0, -28(%rbp)
-	movl	$0, -32(%rbp)
-	movq	%rdi, -2944(%rbp)       ## 8-byte Spill
-	movq	%r8, %rdi
-	movl	%esi, -2948(%rbp)       ## 4-byte Spill
-	movl	%ecx, %esi
-	callq	_memset
-	movq	-24(%rbp), %rdx
-	movq	-2944(%rbp), %rdi       ## 8-byte Reload
-	movl	-2948(%rbp), %esi       ## 4-byte Reload
-	callq	_fgets
-	movl	$1000, %esi             ## imm = 0x3E8
-	leaq	-1040(%rbp), %rdi
-	movq	-24(%rbp), %rdx
-	movq	%rax, -2960(%rbp)       ## 8-byte Spill
-	callq	_fgets
-	leaq	L_.str2(%rip), %rsi
-	leaq	-1152(%rbp), %rdi
-	movq	%rax, -2968(%rbp)       ## 8-byte Spill
-	callq	_strtok
-	leaq	-1152(%rbp), %rdi
-	leaq	-1040(%rbp), %rdx
-	movq	%rdi, -2976(%rbp)       ## 8-byte Spill
-	movq	%rdx, %rdi
-	movq	%rax, -2984(%rbp)       ## 8-byte Spill
-	callq	_strlen
-	movl	%eax, %ecx
-	movl	%ecx, -36(%rbp)
-	movq	-2976(%rbp), %rdi       ## 8-byte Reload
-	callq	_strlen
-	movl	%eax, %ecx
-	movl	%ecx, -40(%rbp)
-	movslq	-40(%rbp), %rax
-	shlq	$0, %rax
-	movq	%rax, %rdi
-	callq	_malloc
-	movl	$48, %esi
-	movabsq	$-1, %rcx
-	movq	%rax, -2280(%rbp)
-	movq	-2280(%rbp), %rdi
-	movslq	-40(%rbp), %rax
-	shlq	$0, %rax
-	movq	%rax, %rdx
-	callq	___memset_chk
-	movabsq	$1000, %rdx             ## imm = 0x3E8
-	leaq	-1040(%rbp), %rdi
-	movq	-2280(%rbp), %rsi
-	movq	%rax, -2992(%rbp)       ## 8-byte Spill
-	callq	___strcat_chk
-	movq	-24(%rbp), %rdi
-	movq	%rax, -3000(%rbp)       ## 8-byte Spill
-	callq	_fclose
-	leaq	L_main.codeLenLUT(%rip), %rcx
-	movabsq	$512, %rdx              ## imm = 0x200
-	leaq	-2928(%rbp), %rsi
-	leaq	L_main.LUT(%rip), %rdi
-	movabsq	$128, %r8
-	leaq	-2416(%rbp), %r9
-	movq	%rdi, -3008(%rbp)       ## 8-byte Spill
-	movq	%r9, %rdi
-	movq	-3008(%rbp), %r9        ## 8-byte Reload
-	movq	%rsi, -3016(%rbp)       ## 8-byte Spill
-	movq	%r9, %rsi
-	movq	%rdx, -3024(%rbp)       ## 8-byte Spill
-	movq	%r8, %rdx
-	movl	%eax, -3028(%rbp)       ## 4-byte Spill
-	movq	%rcx, -3040(%rbp)       ## 8-byte Spill
-	callq	_memcpy
-	movq	-3016(%rbp), %rcx       ## 8-byte Reload
-	movq	%rcx, %rdi
-	movq	-3040(%rbp), %rsi       ## 8-byte Reload
-	movq	-3024(%rbp), %rdx       ## 8-byte Reload
-	callq	_memcpy
-LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
-	movl	-28(%rbp), %eax
-	cmpl	-36(%rbp), %eax
-	jge	LBB0_3
-## BB#2:                                ##   in Loop: Header=BB0_1 Depth=1
-	movabsq	$100, %rcx
-	leaq	-1040(%rbp), %rax
-	leaq	-2272(%rbp), %rdi
-	movslq	-28(%rbp), %rdx
-	addq	%rdx, %rax
-	movslq	-40(%rbp), %rdx
-	movq	%rax, %rsi
-	callq	___strncpy_chk
-	movabsq	$0, %rsi
-	movl	$2, %edx
-	leaq	-2272(%rbp), %rdi
-	movq	%rax, -3048(%rbp)       ## 8-byte Spill
-	callq	_strtol
-	movl	%eax, %edx
-	movl	%edx, -2932(%rbp)
-	movslq	-2932(%rbp), %rax
-	movb	-2416(%rbp,%rax), %r8b
-	movl	-32(%rbp), %edx
-	movl	%edx, %r9d
-	addl	$1, %r9d
-	movl	%r9d, -32(%rbp)
-	movslq	%edx, %rax
-	movb	%r8b, -2160(%rbp,%rax)
-	movslq	-2932(%rbp), %rax
-	movl	-2928(%rbp,%rax,4), %edx
-	movl	-28(%rbp), %r9d
-	addl	%edx, %r9d
-	movl	%r9d, -28(%rbp)
-	jmp	LBB0_1
-LBB0_3:
-	leaq	L_.str3(%rip), %rdi
-	leaq	-2160(%rbp), %rsi
-	movb	$0, %al
-	callq	_printf
-	movq	___stack_chk_guard@GOTPCREL(%rip), %rsi
-	movq	(%rsi), %rsi
-	cmpq	-8(%rbp), %rsi
-	movl	%eax, -3052(%rbp)       ## 4-byte Spill
-	jne	LBB0_5
-## BB#4:                                ## %SP_return
-	movl	$0, %eax
-	addq	$3056, %rsp             ## imm = 0xBF0
-	popq	%rbp
-	ret
-LBB0_5:                                 ## %CallStackCheckFailBlk
-	callq	___stack_chk_fail
-	.cfi_endproc
-
-	.section	__TEXT,__cstring,cstring_literals
-L_.str:                                 ## @.str
-	.asciz	"input.txt"
-
-L_.str1:                                ## @.str1
-	.asciz	"r"
-
-L_.str2:                                ## @.str2
-	.asciz	"\n"
-
-	.section	__TEXT,__const
-	.align	4                       ## @main.LUT
-L_main.LUT:
-	.asciz	"ddddddddddddddddddddddddddddddddbbbbbbbbbbbbbbbbeeeeeeeeccccffaa\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000"
-
-	.align	4                       ## @main.codeLenLUT
-L_main.codeLenLUT:
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	1                       ## 0x1
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	2                       ## 0x2
-	.long	3                       ## 0x3
-	.long	3                       ## 0x3
-	.long	3                       ## 0x3
-	.long	3                       ## 0x3
-	.long	3                       ## 0x3
-	.long	3                       ## 0x3
-	.long	3                       ## 0x3
-	.long	3                       ## 0x3
-	.long	4                       ## 0x4
-	.long	4                       ## 0x4
-	.long	4                       ## 0x4
-	.long	4                       ## 0x4
-	.long	5                       ## 0x5
-	.long	5                       ## 0x5
-	.long	6                       ## 0x6
-	.long	6                       ## 0x6
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-	.long	0                       ## 0x0
-
-	.section	__TEXT,__cstring,cstring_literals
-L_.str3:                                ## @.str3
-	.asciz	"%s\n"
-
-
-.subsections_via_symbols
+	.arch armv5
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 2
+	.eabi_attribute 30, 6
+	.eabi_attribute 18, 4
+	.file	"huffmanDecodingOptimized.c"
+	.section	.rodata
+	.align	2
+.LC0:
+	.ascii	"input.txt\000"
+	.align	2
+.LC1:
+	.ascii	"r\000"
+	.align	2
+.LC2:
+	.ascii	"\012\000"
+	.text
+	.align	2
+	.global	main
+	.type	main, %function
+main:
+	@ args = 0, pretend = 0, frame = 2872
+	@ frame_needed = 1, uses_anonymous_args = 0
+	stmfd	sp!, {fp, lr}
+	add	fp, sp, #4
+	sub	sp, sp, #2864
+	sub	sp, sp, #8
+	ldr	r0, .L5
+	ldr	r1, .L5+4
+	bl	fopen
+	mov	r3, r0
+	str	r3, [fp, #-32]
+	mov	r3, #0
+	str	r3, [fp, #-28]
+	mov	r3, #0
+	str	r3, [fp, #-24]
+	sub	r3, fp, #2224
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	mov	r1, #0
+	mov	r2, #100
+	bl	memset
+	sub	r3, fp, #1120
+	sub	r3, r3, #4
+	sub	r3, r3, #8
+	mov	r0, r3
+	mov	r1, #100
+	ldr	r2, [fp, #-32]
+	bl	fgets
+	sub	r3, fp, #1024
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	mov	r1, #1000
+	ldr	r2, [fp, #-32]
+	bl	fgets
+	sub	r3, fp, #1120
+	sub	r3, r3, #4
+	sub	r3, r3, #8
+	mov	r0, r3
+	ldr	r1, .L5+8
+	bl	strtok
+	sub	r3, fp, #1024
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	bl	strlen
+	mov	r3, r0
+	str	r3, [fp, #-20]
+	sub	r3, fp, #1120
+	sub	r3, r3, #4
+	sub	r3, r3, #8
+	mov	r0, r3
+	bl	strlen
+	mov	r3, r0
+	str	r3, [fp, #-16]
+	ldr	r3, [fp, #-16]
+	mov	r0, r3
+	bl	malloc
+	mov	r3, r0
+	str	r3, [fp, #-12]
+	ldr	r3, [fp, #-16]
+	ldr	r0, [fp, #-12]
+	mov	r1, #48
+	mov	r2, r3
+	bl	memset
+	sub	r3, fp, #1024
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	ldr	r1, [fp, #-12]
+	bl	strcat
+	ldr	r0, [fp, #-32]
+	bl	fclose
+	sub	r3, fp, #2352
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r2, #128
+	mov	r0, r3
+	mov	r1, #0
+	bl	memset
+	mov	r3, #100
+	strb	r3, [fp, #-2360]
+	mov	r3, #100
+	strb	r3, [fp, #-2359]
+	mov	r3, #100
+	strb	r3, [fp, #-2358]
+	mov	r3, #100
+	strb	r3, [fp, #-2357]
+	mov	r3, #100
+	strb	r3, [fp, #-2356]
+	mov	r3, #100
+	strb	r3, [fp, #-2355]
+	mov	r3, #100
+	strb	r3, [fp, #-2354]
+	mov	r3, #100
+	strb	r3, [fp, #-2353]
+	mov	r3, #100
+	strb	r3, [fp, #-2352]
+	mov	r3, #100
+	strb	r3, [fp, #-2351]
+	mov	r3, #100
+	strb	r3, [fp, #-2350]
+	mov	r3, #100
+	strb	r3, [fp, #-2349]
+	mov	r3, #100
+	strb	r3, [fp, #-2348]
+	mov	r3, #100
+	strb	r3, [fp, #-2347]
+	mov	r3, #100
+	strb	r3, [fp, #-2346]
+	mov	r3, #100
+	strb	r3, [fp, #-2345]
+	mov	r3, #100
+	strb	r3, [fp, #-2344]
+	mov	r3, #100
+	strb	r3, [fp, #-2343]
+	mov	r3, #100
+	strb	r3, [fp, #-2342]
+	mov	r3, #100
+	strb	r3, [fp, #-2341]
+	mov	r3, #100
+	strb	r3, [fp, #-2340]
+	mov	r3, #100
+	strb	r3, [fp, #-2339]
+	mov	r3, #100
+	strb	r3, [fp, #-2338]
+	mov	r3, #100
+	strb	r3, [fp, #-2337]
+	mov	r3, #100
+	strb	r3, [fp, #-2336]
+	mov	r3, #100
+	strb	r3, [fp, #-2335]
+	mov	r3, #100
+	strb	r3, [fp, #-2334]
+	mov	r3, #100
+	strb	r3, [fp, #-2333]
+	mov	r3, #100
+	strb	r3, [fp, #-2332]
+	mov	r3, #100
+	strb	r3, [fp, #-2331]
+	mov	r3, #100
+	strb	r3, [fp, #-2330]
+	mov	r3, #100
+	strb	r3, [fp, #-2329]
+	mov	r3, #98
+	strb	r3, [fp, #-2328]
+	mov	r3, #98
+	strb	r3, [fp, #-2327]
+	mov	r3, #98
+	strb	r3, [fp, #-2326]
+	mov	r3, #98
+	strb	r3, [fp, #-2325]
+	mov	r3, #98
+	strb	r3, [fp, #-2324]
+	mov	r3, #98
+	strb	r3, [fp, #-2323]
+	mov	r3, #98
+	strb	r3, [fp, #-2322]
+	mov	r3, #98
+	strb	r3, [fp, #-2321]
+	mov	r3, #98
+	strb	r3, [fp, #-2320]
+	mov	r3, #98
+	strb	r3, [fp, #-2319]
+	mov	r3, #98
+	strb	r3, [fp, #-2318]
+	mov	r3, #98
+	strb	r3, [fp, #-2317]
+	mov	r3, #98
+	strb	r3, [fp, #-2316]
+	mov	r3, #98
+	strb	r3, [fp, #-2315]
+	mov	r3, #98
+	strb	r3, [fp, #-2314]
+	mov	r3, #98
+	strb	r3, [fp, #-2313]
+	mov	r3, #101
+	strb	r3, [fp, #-2312]
+	mov	r3, #101
+	strb	r3, [fp, #-2311]
+	mov	r3, #101
+	strb	r3, [fp, #-2310]
+	mov	r3, #101
+	strb	r3, [fp, #-2309]
+	mov	r3, #101
+	strb	r3, [fp, #-2308]
+	mov	r3, #101
+	strb	r3, [fp, #-2307]
+	mov	r3, #101
+	strb	r3, [fp, #-2306]
+	mov	r3, #101
+	strb	r3, [fp, #-2305]
+	mov	r3, #99
+	strb	r3, [fp, #-2304]
+	mov	r3, #99
+	strb	r3, [fp, #-2303]
+	mov	r3, #99
+	strb	r3, [fp, #-2302]
+	mov	r3, #99
+	strb	r3, [fp, #-2301]
+	mov	r3, #102
+	strb	r3, [fp, #-2300]
+	mov	r3, #102
+	strb	r3, [fp, #-2299]
+	mov	r3, #97
+	strb	r3, [fp, #-2298]
+	mov	r3, #97
+	strb	r3, [fp, #-2297]
+	sub	r3, fp, #2864
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r2, #512
+	mov	r0, r3
+	mov	r1, #0
+	bl	memset
+	mov	r3, #1
+	str	r3, [fp, #-2872]
+	mov	r3, #1
+	str	r3, [fp, #-2868]
+	mov	r3, #1
+	str	r3, [fp, #-2864]
+	mov	r3, #1
+	str	r3, [fp, #-2860]
+	mov	r3, #1
+	str	r3, [fp, #-2856]
+	mov	r3, #1
+	str	r3, [fp, #-2852]
+	mov	r3, #1
+	str	r3, [fp, #-2848]
+	mov	r3, #1
+	str	r3, [fp, #-2844]
+	mov	r3, #1
+	str	r3, [fp, #-2840]
+	mov	r3, #1
+	str	r3, [fp, #-2836]
+	mov	r3, #1
+	str	r3, [fp, #-2832]
+	mov	r3, #1
+	str	r3, [fp, #-2828]
+	mov	r3, #1
+	str	r3, [fp, #-2824]
+	mov	r3, #1
+	str	r3, [fp, #-2820]
+	mov	r3, #1
+	str	r3, [fp, #-2816]
+	mov	r3, #1
+	str	r3, [fp, #-2812]
+	mov	r3, #1
+	str	r3, [fp, #-2808]
+	mov	r3, #1
+	str	r3, [fp, #-2804]
+	mov	r3, #1
+	str	r3, [fp, #-2800]
+	mov	r3, #1
+	str	r3, [fp, #-2796]
+	mov	r3, #1
+	str	r3, [fp, #-2792]
+	mov	r3, #1
+	str	r3, [fp, #-2788]
+	mov	r3, #1
+	str	r3, [fp, #-2784]
+	mov	r3, #1
+	str	r3, [fp, #-2780]
+	mov	r3, #1
+	str	r3, [fp, #-2776]
+	mov	r3, #1
+	str	r3, [fp, #-2772]
+	mov	r3, #1
+	str	r3, [fp, #-2768]
+	mov	r3, #1
+	str	r3, [fp, #-2764]
+	mov	r3, #1
+	str	r3, [fp, #-2760]
+	mov	r3, #1
+	str	r3, [fp, #-2756]
+	mov	r3, #1
+	str	r3, [fp, #-2752]
+	mov	r3, #1
+	str	r3, [fp, #-2748]
+	mov	r3, #2
+	str	r3, [fp, #-2744]
+	mov	r3, #2
+	str	r3, [fp, #-2740]
+	mov	r3, #2
+	str	r3, [fp, #-2736]
+	mov	r3, #2
+	str	r3, [fp, #-2732]
+	mov	r3, #2
+	str	r3, [fp, #-2728]
+	mov	r3, #2
+	str	r3, [fp, #-2724]
+	mov	r3, #2
+	str	r3, [fp, #-2720]
+	mov	r3, #2
+	str	r3, [fp, #-2716]
+	mov	r3, #2
+	str	r3, [fp, #-2712]
+	mov	r3, #2
+	str	r3, [fp, #-2708]
+	mov	r3, #2
+	str	r3, [fp, #-2704]
+	mov	r3, #2
+	str	r3, [fp, #-2700]
+	mov	r3, #2
+	str	r3, [fp, #-2696]
+	mov	r3, #2
+	str	r3, [fp, #-2692]
+	mov	r3, #2
+	str	r3, [fp, #-2688]
+	mov	r3, #2
+	str	r3, [fp, #-2684]
+	mov	r3, #3
+	str	r3, [fp, #-2680]
+	mov	r3, #3
+	str	r3, [fp, #-2676]
+	mov	r3, #3
+	str	r3, [fp, #-2672]
+	mov	r3, #3
+	str	r3, [fp, #-2668]
+	mov	r3, #3
+	str	r3, [fp, #-2664]
+	mov	r3, #3
+	str	r3, [fp, #-2660]
+	mov	r3, #3
+	str	r3, [fp, #-2656]
+	mov	r3, #3
+	str	r3, [fp, #-2652]
+	mov	r3, #4
+	str	r3, [fp, #-2648]
+	mov	r3, #4
+	str	r3, [fp, #-2644]
+	mov	r3, #4
+	str	r3, [fp, #-2640]
+	mov	r3, #4
+	str	r3, [fp, #-2636]
+	mov	r3, #5
+	str	r3, [fp, #-2632]
+	mov	r3, #5
+	str	r3, [fp, #-2628]
+	mov	r3, #6
+	str	r3, [fp, #-2624]
+	mov	r3, #6
+	str	r3, [fp, #-2620]
+	b	.L2
+.L3:
+	ldr	r3, [fp, #-28]
+	sub	r2, fp, #1024
+	sub	r2, r2, #4
+	sub	r2, r2, #4
+	add	r2, r2, r3
+	ldr	ip, [fp, #-16]
+	sub	r3, fp, #2224
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	mov	r1, r2
+	mov	r2, ip
+	bl	strncpy
+	sub	r3, fp, #2224
+	sub	r3, r3, #4
+	sub	r3, r3, #4
+	mov	r0, r3
+	mov	r1, #0
+	mov	r2, #2
+	bl	strtol
+	mov	r3, r0
+	str	r3, [fp, #-8]
+	ldr	r0, [fp, #-24]
+	ldr	r3, [fp, #-8]
+	ldr	r2, .L5+12
+	sub	r1, fp, #4
+	add	r3, r1, r3
+	add	r3, r3, r2
+	ldrb	r1, [r3, #0]	@ zero_extendqisi2
+	ldr	r2, .L5+16
+	sub	ip, fp, #4
+	add	r3, ip, r0
+	add	r2, r3, r2
+	mov	r3, r1
+	strb	r3, [r2, #0]
+	ldr	r3, [fp, #-24]
+	add	r3, r3, #1
+	str	r3, [fp, #-24]
+	ldr	r3, [fp, #-8]
+	ldr	r2, .L5+20
+	mov	r3, r3, asl #2
+	sub	r1, fp, #4
+	add	r3, r1, r3
+	add	r3, r3, r2
+	ldr	r2, [r3, #0]
+	ldr	r3, [fp, #-28]
+	add	r3, r3, r2
+	str	r3, [fp, #-28]
+.L2:
+	ldr	r2, [fp, #-28]
+	ldr	r3, [fp, #-20]
+	cmp	r2, r3
+	blt	.L3
+	sub	r3, fp, #2128
+	sub	r3, r3, #4
+	mov	r0, r3
+	bl	puts
+	mov	r3, #0
+	mov	r0, r3
+	sub	sp, fp, #4
+	ldmfd	sp!, {fp, pc}
+.L6:
+	.align	2
+.L5:
+	.word	.LC0
+	.word	.LC1
+	.word	.LC2
+	.word	-2356
+	.word	-2128
+	.word	-2868
+	.size	main, .-main
+	.ident	"GCC: (Sourcery G++ Lite 2008q3-72) 4.3.2"
+	.section	.note.GNU-stack,"",%progbits
