@@ -12,7 +12,7 @@ frequent and 110 to the third etc.
 
 int main(void){
     //Open input file
-    FILE *file = fopen("input_alternate.txt", "r");
+    FILE *file = fopen("input_optimized.txt", "r");
 
     //Counting Variables
     register int i;
