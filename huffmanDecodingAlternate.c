@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 /*
@@ -11,51 +12,54 @@ frequent and 110 to the third etc.
 */
 
 int main(void){
-    //Open input file
-    FILE *file = fopen("input_alternate.txt", "r");
+	//Open input file
+	FILE *file = fopen("input.txt", "r");
 
-    //Counting Variables
-    int i;
-    int variableFrequency = 0;
-    int numOutcomes = 0;
+	//Counting Variables
+	int i = 0;
+	int outputIndex = 0;
 
-    //Lengths
-    int codeLength;
-    int numVariables;
+	//Lengths
+	int codeLength;
+	int numVariables;
 
-    //Code, variable and output strings
-    char code[1000];
-    char variables[100];
-    char output[1000];
+	//Code, variable and output strings
+	char code[1000];
+	char variables[100];
+	char output[1000];
+	char temp[100];
+	memset(temp, 0, sizeof(char)*100);
 
-    //Acquiring input from file
-    fgets(variables, sizeof variables, file);
-    fgets(code, sizeof code, file);
+	//Acquiring input from file
+	fgets(variables, sizeof variables, file);
+	fgets(code, sizeof code, file);
 
-    //Fixing and determining length of inputs
-    strtok(variables, "\n");
-    codeLength = strlen(code);
-    numVariables = strlen(variables);
+	//Fixing and determining length of inputs
+	strtok(variables, "\n");
+	codeLength = strlen(code);
+	numVariables = strlen(variables);
 
-    //Closing file
-    fclose(file);
+	char *buffer = malloc(sizeof(char) * numVariables);
+	memset(buffer, 0x30, sizeof(char)*numVariables);
+	strcat(code, buffer);
 
-    //Loop through values in code
-    for(i = 0; i < codeLength; i++){
-        //If we reach a zero that means a new value is met
-        if(code[i] == '0'){
-            //Add the value that has frequency rating equal to the number of 1's before the 0 
-            //(less 1's = higher frequency)
-            output[numOutcomes] = variables[variableFrequency];
-            numOutcomes = numOutcomes + 1;
-            variableFrequency = 0;
-        //If it's a one we add to the frequency rating counter
-        } else {
-            variableFrequency = variableFrequency + 1;
-        }
-    }
+	//Closing file
+	fclose(file);
 
-    //Output the string
-    printf("%s\n", output);
-    return 0;
+	char LUT[128] = {'d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','d','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','e','e','e','e','e','e','e','e','c','c','c','c','f','f','a','a'};
+	int codeLenLUT[128] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,4,4,4,4,5,5,6,6};
+
+	//Loop through values in code
+	while (i < codeLength) {
+		// QUESTIONABLE?
+		strncpy(temp, code+i, numVariables);
+		int index = (int) strtol(temp, NULL, 2);
+		output[outputIndex++] = LUT[index];
+		i += codeLenLUT[index];
+	}
+
+	//Output the string
+	printf("%s\n", output);
+
+	return 0;
 }
