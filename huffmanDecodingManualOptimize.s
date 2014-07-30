@@ -119,8 +119,8 @@ main:
 	mov	r0, #0
 	sub	sp, fp, #4
 	ldmfd	sp!, {fp, pc}
-#.L8: - not sure if this is ever used or not
-#	.align	2 - not sure if this is even used or not
+.L8: 
+	.align	2
 .L7:
 	.word	.LC0
 	.word	.LC1
