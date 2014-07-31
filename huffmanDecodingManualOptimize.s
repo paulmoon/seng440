@@ -28,8 +28,8 @@ main:
 	@ frame_needed = 1, uses_anonymous_args = 0
 	stmfd	sp!, {fp, lr}
 	add	fp, sp, #4
-	sub	sp, sp, #2120
-	#sub	sp, sp, #8 - added 8 to line above
+	sub	sp, sp, #2112
+	sub	sp, sp, #8
 	ldr	r0, .L7
 	ldr	r1, .L7+4
 	bl	fopen
@@ -111,16 +111,12 @@ main:
 	cmp	r1, r2
 	blt	.L5
 	sub	r3, fp, #2108
-	#sub	r3, r3, #4 - added 4 to line above
-	#sub	r3, r3, #8 - added 8 to 2nd line above
+	sub	r3, r3, #12
 	mov	r0, r3
 	bl	puts
-	#mov	r3, #0 - skipped adding to r3 and just went straight to r0
 	mov	r0, #0
 	sub	sp, fp, #4
 	ldmfd	sp!, {fp, pc}
-.L8: 
-	.align	2
 .L7:
 	.word	.LC0
 	.word	.LC1
