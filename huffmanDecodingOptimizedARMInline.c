@@ -35,7 +35,7 @@ int main(void){
     //Closing file
     fclose(file);
 
-    __asm__("huffman %0, %1" : "=r" (code) : "r" (variables));
+    __asm__("huffman %1, %2, %0" : "=r" (output) : "r" (code), "r" (variables));
 
     //Output the string
     printf("%s\n", output);
