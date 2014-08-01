@@ -1,0 +1,43 @@
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+par -w -intstyle ise -ol high -mt off huffman_decoder_map.ncd huffman_decoder.ncd huffman_decoder.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml huffman_decoder.twx huffman_decoder.ncd -o huffman_decoder.twr huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx75-fgg484-3 "huffman_decoder.ngc" huffman_decoder.ngd  
+map -intstyle ise -p xc6slx75-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o huffman_decoder_map.ncd huffman_decoder.ngd huffman_decoder.pcf 
+par -w -intstyle ise -ol high -mt off huffman_decoder_map.ncd huffman_decoder.ncd huffman_decoder.pcf 
+xst -intstyle ise -ifn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.xst" -ofn "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_decoder.syr" 

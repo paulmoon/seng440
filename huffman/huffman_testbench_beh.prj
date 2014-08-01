@@ -1,0 +1,2 @@
+vhdl work "huffman_decoder.vhd"
+vhdl work "huffman_testbench.vhd"

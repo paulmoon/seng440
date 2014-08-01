@@ -1,0 +1,2 @@
+vhdl isim_temp "huffman_decoder.vhd"
+vhdl isim_temp "huffman_testbench.vhd"

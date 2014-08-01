@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_testbench_isim_beh.exe" -prj "C:/Documents and Settings/paulmoon/Desktop/SENG440/huffman/huffman_testbench_beh.prj" "work.huffman_testbench" 
