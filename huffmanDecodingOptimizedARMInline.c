@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 /*
 This function takes a huffman code and a list of characters that are ordered 
@@ -21,7 +22,7 @@ int main(void){
     //Code, variable and output strings
     char code[1000];
     char variables[100];
-    char output[1000];
+    char *output = malloc(1000 * sizeof(char));
 
     //Acquiring input from file
     fgets(variables, sizeof variables, file);
